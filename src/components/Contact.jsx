@@ -28,7 +28,7 @@ export default function Contact() {
     <section id="contacts" className="mb-5">
       <div className="row g-4">
         <div className="col-md-6">
-          <div className="p-4 rounded-3 h-100" style={cardStyle}>
+          <div className="p-4 rounded-4 h-100" style={cardStyle}>
             <div className="fs-5 fw-bold mb-4 text-center text-info">Мои контакты</div>
             <div className="d-flex justify-content-center gap-4 fs-1 mb-1">
               <a href="https://github.com/EjinD" target="_blank" rel="noreferrer" className="text-info"><FaGithubSquare /></a>
