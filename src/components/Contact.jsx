@@ -1,170 +1,80 @@
 import React, { useState } from "react";
 import {
-  FaLinkedin,
-  FaGithubSquare,
-  FaCodepen,
-  FaFacebookSquare,
-  FaUser,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkedAlt,
+  FaGithubSquare, FaTelegramPlane, FaUser, FaPhoneAlt, FaEnvelope, FaMapMarkedAlt
 } from "react-icons/fa";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const cardStyle = { background: "#0f172a", boxShadow: "0 6px 30px rgba(15,23,42,0.4)", color: "#fff" };
+  const iconStyle = "me-3 text-info fs-4";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     setSent(true);
     setTimeout(() => setSent(false), 2500);
   };
 
+  const InfoItem = ({ icon: Icon, label, children }) => (
+    <div className="d-flex align-items-start mb-3">
+      <Icon className={iconStyle} />
+      <div>
+        <div className="fw-bold">{label}</div>
+        {children}
+      </div>
+    </div>
+  );
+
   return (
     <section id="contacts" className="mb-5">
-      <h2 className="h4 fw-bold mb-4">Контакты</h2>
-      <div className="row">
-        <div className="col-md-6 mb-4 mb-md-0">
-          <div className="p-4 rounded-3 text-white h-100"style={{ background: "#d8d8d8ff" }}>
-            <div className="fs-5 fw-bold mb-3 text-center" style={{ color: "#000000ff" }}>Find me through
+      <div className="row g-4">
+        <div className="col-md-6">
+          <div className="p-4 rounded-3 h-100" style={cardStyle}>
+            <div className="fs-5 fw-bold mb-4 text-center text-info">Мои контакты</div>
+            <div className="d-flex justify-content-center gap-4 fs-1 mb-1">
+              <a href="https://github.com/EjinD" target="_blank" rel="noreferrer" className="text-info"><FaGithubSquare /></a>
+              <a href="https://t.me/EjinD2" target="_blank" rel="noreferrer" className="text-info"><FaTelegramPlane /></a>
             </div>
-             <div className="d-flex justify-content-around fs-3 mb-4">
-              <a
-                href="https://www.linkedin.com/in/maaazhar/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-danger"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://github.com/Maaazhar"
-                target="_blank"
-                rel="noreferrer"
-                className="text-danger"
-              >
-                <FaGithubSquare />
-              </a>
-              <a
-                href="https://codepen.io/maaazhar"
-                target="_blank"
-                rel="noreferrer"
-                className="text-danger"
-              >
-                <FaCodepen />
-              </a>
-              <a
-                href="https://www.facebook.com/MAAAZHAAAR/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-danger"
-              >
-                <FaFacebookSquare />
-              </a>
-            </div>
-
-            {/* Контакты */}
-            <div className="mt-3">
-              <div className="d-flex align-items-start mb-3">
-                <FaUser className="me-2 text-danger" />
-                <div>
-                  <div className="fw-bold">Full Name</div>
-                  <div>Данил Егин</div>
-                </div>
-              </div>
-
-              <div className="d-flex align-items-start mb-3">
-                <FaPhoneAlt className="me-2 text-danger" />
-                <div>
-                  <div className="fw-bold">Mobile</div>
-                  <div>
-                    <a
-                      href="tel:+79991234567"
-                      className="text-white text-decoration-none"
-                    >
-                      +7 (999) 123-45-67
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="d-flex align-items-start mb-3">
-                <FaEnvelope className="me-2 text-danger" />
-                <div>
-                  <div className="fw-bold">Email</div>
-                  <div>
-                    <a
-                      href="mailto:danil.egin.bk@gmail.com"
-                      className="text-white text-decoration-none"
-                    >
-                      danil.egin.bk@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="d-flex align-items-start">
-                <FaMapMarkedAlt className="me-2 text-danger" />
-                <div>
-                  <div className="fw-bold">Address</div>
-                  <div>Хабаровск, Россия</div>
-                </div>
-              </div>
+            <div className="mt-" >
+              <InfoItem icon={FaUser} label="Имя">Даниил Егин</InfoItem>
+              <InfoItem icon={FaPhoneAlt} label="Телефон">
+                <a href="tel:+79243102274" className="text-white text-decoration-none">+7 (924) 310-22-74</a>
+              </InfoItem>
+              <InfoItem icon={FaEnvelope} label="Email">
+                <a href="mailto:danil.egin.bk@gmail.com" className="text-white text-decoration-none">danil.egin.bk@gmail.com</a>
+              </InfoItem>
+              <InfoItem icon={FaMapMarkedAlt} label="Address">Хабаровск, Россия</InfoItem>
             </div>
           </div>
         </div>
 
-        {/* Правая колонка — форма */}
         <div className="col-md-6">
-          <div
-            className="p-4 bg-white rounded-3 h-100"
-            style={{ boxShadow: "0 6px 30px rgba(15,23,42,0.06)" }}
-          >
-            <div className="fs-5 fw-bold mb-3">Напишите мне</div>
+          <div className="p-4 rounded-3 h-100" style={cardStyle}>
+            <div className="fs-5 fw-bold mb-3 text-info text-center">Напишите мне</div>
             <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <input
-                  type="text"
-                  name="name"
-                  className="form-control"
-                  placeholder="Ваше имя"
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="tel"
-                  name="mobile"
-                  className="form-control"
-                  placeholder="Телефон"
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="email"
-                  name="email"
-                  className="form-control"
-                  placeholder="Email"
-                  required
-                />
-              </div>
+              {["Ваше имя", "Телефон", "Email"].map((ph, i) => (
+                <div className="mb-3" key={i}>
+                  <input
+                    type={i === 1 ? "tel" : i === 2 ? "email" : "text"}
+                    name={i === 0 ? "name" : i === 1 ? "mobile" : "email"}
+                    className="form-control bg-dark text-white border-secondary"
+                    placeholder={ph}
+                    required
+                  />
+                </div>
+              ))}
               <div className="mb-3">
                 <textarea
                   name="message"
                   rows="4"
-                  className="form-control"
+                  className="form-control bg-dark text-white border-secondary"
                   placeholder="Сообщение"
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-dark w-100">
+              <button type="submit" className="btn w-100 fw-bold" style={{ backgroundColor: "#0dcaf0", color: "#000" }}>
                 Отправить
               </button>
-              {sent && (
-                <div className="alert alert-success mt-3 p-2">
-                  Сообщение отправлено!
-                </div>
-              )}
+              {sent && <div className="alert alert-success mt-3 p-2">Сообщение отправлено!</div>}
             </form>
           </div>
         </div>
