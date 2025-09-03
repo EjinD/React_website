@@ -6,7 +6,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Showcase  from './components/Showcase'
+import './styles.css'
 
 export default function App(){
   return (
@@ -18,7 +18,6 @@ export default function App(){
         <Skills /> 
         <Projects />
         <Contact />
-        <Showcase />
       </main>
       <Footer />
     </div>

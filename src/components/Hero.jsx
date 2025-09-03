@@ -1,27 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { FaRocket, FaFileAlt } from 'react-icons/fa';
+import '../styles.css';
 
-export default function Hero(){
+export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <section className="mb-5">
-      <div className="row align-items-center">
-        <div className="col-lg-7">
-          <div className="hero-card">
-            <h1 className="display-6 fw-bold">Привет — я frontend-разработчик</h1>
-            <p className="text-muted mb-4">Делаю аккуратные интерфейсы на HTML, CSS, JavaScript и React. Быстро решаю задачи и стремлюсь изучать новое.</p>
-            <div className="d-flex gap-2">
-              <a href="#projects" className="btn btn-primary btn-lg">Мои проекты</a>
-              <a href="#contacts" className="btn btn-outline-secondary btn-lg">Связаться</a>
+      <div className="row align-items-stretch">
+        <div className={`col-lg-6 fade-up ${isVisible ? 'visible' : ''}`}>
+          <div className="hero-card h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h1 className="display-5 fw-bold text-info mb-3">
+                Привет! <span className="text-white">Я — Frontend‑разработчик</span>
+              </h1>
+              <p className="text mb-4 fs-5">
+                Создаю современные, адаптивные и удобные интерфейсы на <strong>HTML</strong>, <strong>CSS</strong>, 
+                <strong>JavaScript</strong> и <strong>React</strong>. Люблю чистый код, внимание к деталям и постоянное развитие.
+              </p>
+      <div className="d-flex gap-3 flex-wrap">
+        <a
+           href="#projects"
+           className="btn hero-btn-accent btn-lg d-flex align-items-center gap-2 hero-btn-text"
+        >
+           <FaRocket /> Мои проекты
+       </a>
+          <a
+           href="#resume"
+           className="btn hero-btn-outline btn-lg d-flex align-items-center gap-2 hero-btn-text"
+         >
+       <FaFileAlt /> Резюме
+         </a>
+          </div>
             </div>
-            <div className="mt-3 text-muted small">Ключевые навыки: HTML • CSS • JavaScript • React • Bootstrap • Git</div>
+            <div className="mt-4 text small">
+              Ключевые навыки: HTML • CSS • JavaScript • React • Bootstrap • Git
+            </div>
           </div>
         </div>
-        <div className="col-lg-5 text-center mt-4 mt-lg-0">
-          <div className="p-4 bg-white rounded-3" style={{boxShadow:'0 6px 30px rgba(15,23,42,0.06)'}}>
-            <img src="/avatar-placeholder.svg" alt="avatar" style={{width:180,height:180,objectFit:'cover',borderRadius:12}}/>
-            <div className="mt-3">Нажми на проект, чтобы посмотреть демо</div>
+
+        <div className={`col-lg-6 text-center mt-4 mt-lg-0 scale-in ${isVisible ? 'visible' : ''}`}>
+          <div className="hero-avatar-wrapper h-100 d-flex flex-column justify-content-center align-items-center">
+            <img src="/avatar-placeholder.svg" alt="avatar" className="hero-avatar" />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

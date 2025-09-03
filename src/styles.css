@@ -1,30 +1,214 @@
-:root{
-  --brand: #0d6efd;
+:root {
+  --bg-dark: #0f172a;
+  --accent: #0dcaf0;
+  --text-light: #ffffff;
+  --text-muted: #adb5bd;
+  --border-color: #343a40;
+  --shadow-card: 0 6px 30px rgba(15, 23, 42, 0.4);
 }
-body{
-  background:#f9f8fa;
-  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+.header-dark {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-card);
 }
-.header-logo
-{width:44px;
-  height:44px;
-  border-radius:8px;
-  background:linear-gradient(135deg,var(--brand),#6610f2);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-weight:700;
+
+.header-link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-.hero-card
-{border-radius:16px;
-  background:#fff;
-  padding:28px;
-  box-shadow:0 6px 30px rgba(15,23,42,0.06);
+
+.header-link:hover {
+  color: var(--accent);
 }
-.project-card
-{transition:transform .18s ease, box-shadow .18s ease;}
-.project-card:hover
-{transform:translateY(-6px);
-  box-shadow:0 10px 30px rgba(15,23,42,0.08);
+
+.card-dark {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-card);
+  color: var(--text-light);
+  border-radius: 1rem;
+  padding: 1.5rem;
 }
+
+.project-card {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-card);
+  color: var(--text-light);
+  border-radius: 0.75rem;
+}
+
+.icon-accent {
+  margin-right: 0.75rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #3be0ff;
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--accent);
+  color: #000;
+}
+.btn-outline-accent {
+  border: 2px solid var(--text-light);
+  color: var(--text-light);
+  font-weight: bold;
+}
+
+.input-dark {
+  background-color: #212529;
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+}
+
+.footer-dark {
+  background-color: #212529;
+}
+
+.hero-card {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-card);
+  color: var(--text-light);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.hero-avatar-wrapper {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-card);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+
+.hero-avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  border: 3px solid var(--accent);
+}
+
+.hero-text {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.hero-btn-text {
+  color: var(--bs-info) !important;
+}
+
+.hero-btn-text svg {
+  color: var(--bs-info);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.6s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.progress-sm {
+  height: 10px;
+}
+
+.progress-bar-fill {
+  background-color: var(--accent);
+}
+
+.section-card {
+  background: var(--bg-dark);
+  box-shadow: var(--shadow-card);
+  color: var(--text-light);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-item {
+  width: 100%;
+}
+
+.skill-title {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.skill-bar {
+  background: #1e293b; /* тёмный фон полосы */
+  border-radius: 8px;
+  overflow: hidden;
+  height: 24px;
+}
+
+.skill-fill {
+  background: linear-gradient(90deg, var(--accent), #38bdf8);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  transition: width 1.5s ease;
+}
+
+.skill-percent {
+  font-size: 0.85rem;
+}
+
+.typewriter {
+  white-space: pre-wrap; /* перенос строк */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-top: 1rem;
+  color: #000;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--accent);
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+

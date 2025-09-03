@@ -1,32 +1,43 @@
-import React from 'react'
-
+import React from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 const projects = [
-  {title:'RawCreateName1', desc:'desc...', tech:'React • Bootstrap', link:'#'},
-  {title:'RawCreateName2', desc:'desc...', tech:'HTML • CSS • Bootstrap', link:'#'},
- /* {title:'RawCreateName3', desc:'desc...', tech:'React', link:'#'}
- Да да я еще не придумал как всё красиво оформить*/
-]
+  {
+    title: 'App1',
+    description: 'Placeholder',
+    link: '#',
+  },
+  {
+    title: 'App2',
+    description: 'Placeholder',
+    link: '#',
+  },
+  {
+    title: 'App3',
+    description: 'Placeholder',
+    link: '#',
+  },
+];
 
-export default function Projects(){
+export default function Projects() {
   return (
     <section id="projects" className="mb-5">
-      <h2 className="h4 fw-bold">Проекты</h2>
-      <div className="row mt-3">
-        {projects.map(p=>(
-          <div className="col-md-4 mb-3" key={p.title}>
-            <div className="card project-card h-100">
-              <div className="card-body d-flex flex-column">
+      <h2 className="h4 fw-bold text-info">Проекты</h2>
+      <div className="row g-4 mt-2">
+        {projects.map(p => (
+          <div className="col-md-4" key={p.title}>
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
                 <h5 className="card-title">{p.title}</h5>
-                <p className="card-text text-muted">{p.desc}</p>
-                <div className="mt-auto d-flex justify-content-between align-items-center">
-                  <div className="text-muted small">{p.tech}</div>
-                  <a href={p.link} className="btn btn-sm btn-outline-primary">Смотреть</a>
-                </div>
+                <p className="card-text">{p.description}</p>
+                <a href={p.link} className="btn btn-outline-info btn-sm">
+                  Смотреть
+                </a>
               </div>
             </div>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }
+
