@@ -165,7 +165,7 @@
 }
 
 .skill-bar {
-  background: #1e293b; /* тёмный фон полосы */
+  background: #1e293b;
   border-radius: 8px;
   overflow: hidden;
   height: 24px;
@@ -189,7 +189,7 @@
 }
 
 .typewriter {
-  white-space: pre-wrap; /* перенос строк */
+  white-space: pre-wrap;
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 700px;

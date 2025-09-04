@@ -12,7 +12,6 @@ export default function Skills() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Запускаем анимацию после монтирования
     setVisible(true);
   }, []);
 

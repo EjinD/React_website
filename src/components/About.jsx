@@ -16,7 +16,7 @@ export default function About() {
       const timeout = setTimeout(() => {
         setText((prev) => prev + fullText[index]);
         setIndex(index + 1);
-      }, 20); // скорость печати
+      }, 20);
       return () => clearTimeout(timeout);
     }
   }, [index, fullText]);
